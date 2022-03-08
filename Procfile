@@ -1,0 +1,1 @@
+web: gunicorn Django-Jigyasa-App-master.wsgi --log-file -
