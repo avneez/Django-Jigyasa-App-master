@@ -1,0 +1,114 @@
+{% load static %}
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="{% url 'StudentHome' %}" class="brand-link">
+    <img src={% static 'dashboard/dist/img/AdminLTELogo.png' %} alt="AdminLTE Logo"
+      class="brand-image img-circle elevation-3" style="opacity: .8">
+    <span class="brand-text font-weight-light">Jigyasa Student Home</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src={% static 'dashboard/dist/img/user2-160x160.jpg' %} class="img-circle elevation-2" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="#" class="d-block">{{user.first_name}} {{user.last_name}} </a>
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+        {% url 'StudentHome' as StudentHome %}
+        <li class="nav-item">
+          <a href='{{StudentHome}}' class="nav-link {% if request.path == StudentHome %}active {% endif %}  ">
+            <i class="fas fa-home"></i>
+            &ensp;
+            <p>
+              Home
+            </p>
+          </a>
+        </li>
+
+        {% url 'StudentJoinMeeting' as StudentJoinMeeting %}
+        <li class="nav-item">
+          <a href='{{StudentJoinMeeting}}'
+            class="nav-link {% if request.path == StudentJoinMeeting %}active {% endif %}  ">
+            <i class="far fa-calendar"></i>
+            &ensp;
+            <p>
+              Join Meeting
+            </p>
+          </a>
+        </li>
+
+        {% url 'StudentDownloadNotes' as StudentDownloadNotes %}
+        <li class="nav-item">
+          <a href='{{StudentDownloadNotes}}'
+            class="nav-link {% if request.path == StudentDownloadNotes %}active {% endif %}  ">
+            <i class="fas fa-file-download"></i>
+            &ensp;
+            <p>
+              Download Notes
+            </p>
+          </a>
+        </li>
+
+        {% url 'StudentTodoList' as StudentTodoList %}
+        <li class="nav-item">
+          <a href='{{StudentTodoList}}' class="nav-link {% if request.path == StudentTodoList %}active {% endif %}  ">
+            <i class="fas fa-list"></i>
+            &ensp;
+            <p>
+              Todo List
+            </p>
+          </a>
+        </li>
+
+        {% url 'StudentViewAttendance' as StudentViewAttendance %}
+        {% url 'GetStudentAttendanceReport' as GetStudentAttendanceReport %}
+        <li class="nav-item">
+          <a href='{{StudentViewAttendance}}'
+            class="nav-link {% if request.path == StudentViewAttendance %}active {% endif %} {% if request.path == GetStudentAttendanceReport %}active {% endif %}  ">
+            <i class="far fa-clipboard"></i>
+            &ensp;
+            <p>
+              Student Attendance
+
+            </p>
+          </a>
+        </li>
+
+        {% url 'StudentApplyLeave' as StudentApplyLeave %}
+        <li class="nav-item">
+          <a href='{{StudentApplyLeave}}'
+            class="nav-link {% if request.path == StudentApplyLeave %}active {% endif %}  ">
+            <i class="fas fa-envelope-open-text"></i>
+            &ensp;
+            <p>
+              Apply Leave
+            </p>
+          </a>
+        </li>
+        {% url 'StudentFeedbackMenu' as StudentFeedbackMenu %}
+        <li class="nav-item">
+          <a href='{{StudentFeedbackMenu}}'
+            class="nav-link {% if request.path == StudentFeedbackMenu %}active {% endif %}  ">
+            <i class="far fa-comment-alt"></i>
+            &ensp;
+            <p>
+              Feedback
+            </p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

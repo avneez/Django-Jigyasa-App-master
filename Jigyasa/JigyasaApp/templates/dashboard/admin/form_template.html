@@ -1,0 +1,14 @@
+<form action={{action_path}} method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="card-body">
+        {% for field in form %}
+        <div class="form-group">
+           {{field.error}}
+           {{field.label_tag}}
+           {{field}}
+        </div>
+        {% endfor %}
+    <div class="card-footer">
+        <button type="submit" class="form-control btn btn-primary">{{button_text}}</button>
+    </div>
+</form>
