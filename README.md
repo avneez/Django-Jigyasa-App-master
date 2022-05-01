@@ -1,4 +1,5 @@
 # Jigyasa-Web-App
+Jigyasa STEM (Student Education Management).
 
 Tech Stacks : HTML, CSS, JavaScript, Django, MySQL.
 
